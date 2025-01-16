@@ -186,20 +186,20 @@ Y1 = df['Depression']
 
 x_train, x_test, y_train, y_test = train_test_split(X1,Y1,test_size= .2, random_state=42)
 
-# models = [
-#     ('LR',LogisticRegression()),
-#     ('DTC',DecisionTreeClassifier()),
-#     ('NaiveBayes',GaussianNB()),
-#     ('KNeighbors',KNeighborsClassifier()),
-#     ('RFC',RandomForestClassifier()),
-#     ('SVC',SVC()),
-#     ('XGBoost',xgb.XGBClassifier()),
-# ]
+models = [
+    ('LR',LogisticRegression()),
+    ('DTC',DecisionTreeClassifier()),
+    ('NaiveBayes',GaussianNB()),
+    ('KNeighbors',KNeighborsClassifier()),
+    ('RFC',RandomForestClassifier()),
+    ('SVC',SVC()),
+    ('XGBoost',xgb.XGBClassifier()),
+]
 
-# for i, model in models:
-#     K = KFold(n_splits=5)
-#     result = cross_val_score(model, x_train, y_train, cv = K,scoring='accuracy')
-#     print(i,': ' ,result)
+for i, model in models:
+    K = KFold(n_splits=5)
+    result = cross_val_score(model, x_train, y_train, cv = K,scoring='accuracy')
+    print(i,': ' ,result)
 
 # -> Dung LogisticRegression(chac the)
 

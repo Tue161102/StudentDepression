@@ -209,24 +209,15 @@ print(f"test_Recall: {recall}")
 print(f"test_F1-Score: {f1}")
 
 
-# Tính log-likelihood của mô hình
-y_prob = model.predict_proba(X)
-
-from sklearn.metrics import log_loss
-log_likelihood = -log_loss(y, y_prob[:, 1])
-print(f"Log-Likelihood của mô hình: {log_likelihood:.4f}")
-
-
-
 import matplotlib.pyplot as plt
 # Hiển thị Confusion Matrix
 
 from sklearn.metrics import ConfusionMatrixDisplay
-ConfusionMatrixDisplay.from_estimator(model, X_train, y_train, display_labels=["Không trầm cảm ", "Trầm cảm "], cmap="Blues")
+ConfusionMatrixDisplay.from_estimator(model1, X_train, y_train, display_labels=["Không trầm cảm ", "Trầm cảm "], cmap="Blues")
 plt.title("Confusion Matrix - TRAIN")
 plt.show()
 
-ConfusionMatrixDisplay.from_estimator(model, X_test, y_test,display_labels=["Không trầm cảm ", "Trầm cảm "], cmap="Blues")
+ConfusionMatrixDisplay.from_estimator(model1, X_test, y_test,display_labels=["Không trầm cảm ", "Trầm cảm "], cmap="Blues")
 plt.title("Confusion Matrix - TEST")
 plt.show()
 
